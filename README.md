@@ -62,7 +62,7 @@ The Car Wash Booking System is a web application that allows users to book car w
    npm run start:dev
    ```
 
-5. Access the application in your browser at `http://localhost:3000`.
+5. Access the application in your browser at `http://localhost:5000`.
 
 ## API Documentation
 

@@ -4,7 +4,7 @@
 
 ## Live URL
 
-[https://car-washing-system-bice.vercel.app](https://car-washing-system-bice.vercel.app)
+[https://car-washing-system-rho.vercel.app](https://car-washing-system-rho.vercel.app)
 
 ## Description
 
@@ -33,7 +33,7 @@ The Car Wash Booking System is a web application that allows users to book car w
 1. Clone this repository:
 
    ```bash
-   git clone https://github.com/Morshed-17/car-washing-system.git
+   git clone https://github.com/hasan-fahad/Car-Washing-System-Backend.git
    ```
 
 2. Install dependencies:

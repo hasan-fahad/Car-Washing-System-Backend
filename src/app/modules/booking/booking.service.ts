@@ -44,10 +44,9 @@ const createBooking = async (payload: TBookingForReq, user: JwtPayload) => {
     registrationPlate: payload?.registrationPlate,
   });
 
-  const result = await Booking.findById(booking?._id)
-    .populate('customer')
-    .populate('service')
-    .populate('slot');
+  const result = await Booking.findById(booking?._id).populate('customer').populate('service').populate('slot');
+    
+
   return result;
 };
 
@@ -62,7 +61,7 @@ const getAllBookings = async () => {
 const getUserBooking = async (user: JwtPayload) => {
   const userData = await User.findOne({ email: user?.email, role: user?.role });
 
-  const result = Booking.find({ customer: userData?._id });
+  const result = Booking.find({ customer: userData?._id }).populate('customer').populate('service').populate('slot');
   return result;
 };
 

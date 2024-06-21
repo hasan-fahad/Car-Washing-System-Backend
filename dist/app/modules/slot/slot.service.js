@@ -57,7 +57,7 @@ const getAvailableSlots = (query) => __awaiter(void 0, void 0, void 0, function*
     if (query === null || query === void 0 ? void 0 : query.serviceId) {
         queryObj.service = query.serviceId;
     }
-    const result = yield slot_model_1.Slot.find(queryObj);
+    const result = yield slot_model_1.Slot.find(queryObj).populate('service');
     return result;
 });
 exports.SlotSlot = {

@@ -51,10 +51,7 @@ const createBooking = (payload, user) => __awaiter(void 0, void 0, void 0, funct
         manufacturingYear: payload === null || payload === void 0 ? void 0 : payload.manufacturingYear,
         registrationPlate: payload === null || payload === void 0 ? void 0 : payload.registrationPlate,
     });
-    const result = yield booking_model_1.Booking.findById(booking === null || booking === void 0 ? void 0 : booking._id)
-        .populate('customer')
-        .populate('service')
-        .populate('slot');
+    const result = yield booking_model_1.Booking.findById(booking === null || booking === void 0 ? void 0 : booking._id).populate('customer').populate('service').populate('slot');
     return result;
 });
 const getAllBookings = () => __awaiter(void 0, void 0, void 0, function* () {
@@ -66,7 +63,7 @@ const getAllBookings = () => __awaiter(void 0, void 0, void 0, function* () {
 });
 const getUserBooking = (user) => __awaiter(void 0, void 0, void 0, function* () {
     const userData = yield user_model_1.User.findOne({ email: user === null || user === void 0 ? void 0 : user.email, role: user === null || user === void 0 ? void 0 : user.role });
-    const result = booking_model_1.Booking.find({ customer: userData === null || userData === void 0 ? void 0 : userData._id });
+    const result = booking_model_1.Booking.find({ customer: userData === null || userData === void 0 ? void 0 : userData._id }).populate('customer').populate('service').populate('slot');
     return result;
 });
 exports.BookingServices = {
